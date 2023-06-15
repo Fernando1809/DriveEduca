@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Foro</title>
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/eaad19a530.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="com.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://fb.me/react-15.2.0.js"></script>
+    <script src="https://fb.me/react-dom-15.2.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="wrapper">
+    <div class="color-bar"></div>
+    <nav>
+        <p class="logo-danicodex">DriveEduca</p>
+        <ul class="cont-ul">
+            <li><i class="fa-sharp fa-solid fa-house"></i> <a class="menu" href="index.html">Inicio</a></li>
+            <li class="list"><i class="fa-solid fa-address-card"></i>
+                Licencias 
+                <ul class="ul-second">
+                    <li> <a href="licencia_menor.html">Licencia juvenil</a></li>
+                    <li> <a href="licencia_motos.html">Licencia de moto</a></li>
+                    <li> <a href="licencia_liviana.html">Licencia  liviana</a></li>
+                    <li> <a href="licencia_particular.html">Licencia particular</a></li>
+                    <li> <a href="licencia_pesada.html">Licencia pesada</a></li>
+                    <li> <a href="licencia_T.html">Licencia pesada T</a></li>
+                </ul>
+            </li>
+            <li class="list"><i class="fa-solid fa-book"></i>
+                <a class="menu" href="reglamento.html">Reglamento de transito </a></li>
+            <li class="list"><i class="fa-solid fa-hand-holding-dollar"></i>
+                Multas 
+                <ul class="ul-second">
+                    <li> <a href="multas_leves.html">Leves</a></li>
+                    <li> <a href="multas_graves.html">Graves</a></li>
+                    <li> <a href="multas_muy_graves.html">Muy graves</a></li>
+                </ul>
+            </li>
+            <li><i class="fa-solid fa-people-group"></i> <a class="menu" href="foro.html">Foro</a></li>
+            <li><i class="fa-solid fa-comments"></i> <a class="menu" href="chat.html">Chat</a></li>
+
+            <li><i class="fa-solid fa-right-from-bracket"></i> <a class="menu" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+
+<script>
+  function cerrarSesion() {
+    // Mostrar un mensaje de confirmación al usuario
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+      // Aquí puedes agregar la lógica para cerrar la sesión y redirigir al usuario a la página de inicio de sesión
+      // Por ejemplo, puedes redirigir al usuario a login.html utilizando window.location.href
+      window.location.href = "login.html";
+    }
+  }
+</script>
+        </ul>
+    </nav>
+    <img src="img/picture.jpeg" alt="talk" id="pictureTalk">
+    <h1 id="meaning">Comparte tu opinión</h1>
+    <div id="app"></div>
+    <script type="text/babel">
+        var Comment = React.createClass({
+            getInitialState: function() {
+                return { editing: false };
+            },
+            edit: function() {
+                this.setState({ editing: true });
+            },
+            remove: function() {
+                this.props.deleteFromBoard(this.props.index);
+            },
+            save: function() {
+                this.props.updateCommentText(this.refs.newText.value, this.props.index);
+                this.setState({ editing: false });
+            },
+            renderForm: function() {
+                return (
+                    <div className="commentContainer">
+                        <textarea ref="newText" className="textareaContainer" defaultValue={this.props.children}></textarea>
+                        <button onClick={this.save} className="save">Guardar</button>
+                    </div>
+                );
+            },
+            renderNormal: function() {
+                return (
+                    <div className="commentContainer">
+                        <div className="commentText">
+                            <p>{this.props.children}</p>
+                        </div>
+                        <button onClick={this.edit} className="edit">Editar</button>
+                        <button onClick={this.remove} className="remove">Remover</button>
+                        <hr /> 
+                    </div>
+                );
+            },
+            render: function() {
+                if (this.state.editing) {
+                    return this.renderForm();
+                } else {
+                    return this.renderNormal();
+                }
+            }
+        });
+
+        var Layout = React.createClass({
+            getInitialState: function() {
+                var savedComments = localStorage.getItem('comments');
+                return {
+                    comments: savedComments ? JSON.parse(savedComments) : []
+                };
+            },
+            addComment: function() {
+                var val = this.refs.name.value;
+                var arr = this.state.comments;
+                arr.push(val);
+                this.setState({ comments: arr });
+                localStorage.setItem('comments', JSON.stringify(arr));
+                this.refs.name.value = '';
+            },
+            updateComment: function(newText, i) {
+                var arr = this.state.comments;
+                arr[i] = newText;
+                this.setState({ comments: arr });
+                localStorage.setItem('comments', JSON.stringify(arr));
+            },
+            removeComment: function(i) {
+                var arr = this.state.comments;
+                arr.splice(i, 1);
+                this.setState({ comments: arr });
+                localStorage.setItem('comments', JSON.stringify(arr));
+            },
+            eachComment: function(text, i) {
+                return (
+                    <Comment key={i} index={i} updateCommentText={this.updateComment} deleteFromBoard={this.removeComment}>
+                        {text}
+                    </Comment>
+                );
+            },
+            handleKeyPress: function(target) {
+                if (target.charCode == 13) {
+                    this.addComment();
+                    this.refs.name.value = '';
+                }
+            },
+            render: function() {
+                return (
+                    <div>
+                        <div>
+                            {this.state.comments.map(this.eachComment)}
+                        </div>
+                        <div className="addNew">
+                            <textarea className="textareaContainer" type="text" ref="name" placeholder="Escribe aquí" onKeyPress={this.handleKeyPress} />
+                            <button type="submit" className="add" onClick={this.addComment.bind(null, this)}>Agregar comentario</button>
+                        </div>
+                    </div>
+                );
+            }
+        });
+
+        ReactDOM.render(<Layout />, document.getElementById('app'));
+    </script>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="rights">Todos los derechos reservados &copy; 2023</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.whatsapp.com/send?phone=+50372649784" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:driveeduca1@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    </body>
+</html>

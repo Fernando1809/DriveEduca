@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+</head>
+
+<body>
+    <form action="conexion/login_registrar.php" method="POST">
+        <h1 class="title">Iniciar sesión</h1>
+        <label>
+            <i class="fa-solid fa-user"></i>
+            <input placeholder="usuario" type="text" name="user" id="username">
+        </label>
+        <label class="password-container">
+            <i class="fa-solid fa-lock"></i>
+            <input placeholder="contraseña" type="password" name="pass" id="password">
+            <!--<i class="fa-solid fa-eye" id="togglePassword"></i>-->
+        </label>
+        <a href="registro.html" class="link">Registrarse</a>
+
+        <button id="button" type="submit" name="btningresar">Login</button>
+    </form>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/eaad19a530.js" crossorigin="anonymous"></script>
+    <title>DriveEduca</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="color-bar"></div>
+        <nav>
+            <p class="logo-danicodex">DriveEduca</p>
+            <ul class="cont-ul">
+                <li><i class="fa-sharp fa-solid fa-house"></i> <a class="menu" href="index.html">Inicio</a></li>
+                <li class="list"><i class="fa-solid fa-address-card"></i> Licencias
+                    <ul class="ul-second">
+                        <li> <a href="licencia_menor.html">Licencia juvenil</a></li>
+                        <li> <a href="licencia_motos.html">Licencia de moto</a></li>
+                        <li> <a href="licencia_liviana.html">Licencia liviana</a></li>
+                        <li> <a href="licencia_particular.html">Licencia particular</a></li>
+                        <li> <a href="licencia_pesada.html">Licencia pesada</a></li>
+                        <li> <a href="licencia_T.html">Licencia pesada T</a></li>
+                    </ul>
+                </li>
+                <li class="list"><i class="fa-solid fa-book"></i> <a class="menu" href="reglamento.html">Reglamento
+                        de transito </a></li>
+                <li class="list"><i class="fa-solid fa-hand-holding-dollar"></i> Multas
+                    <ul class="ul-second">
+                        <li> <a href="multas_leves.html">Leves</a></li>
+                        <li> <a href="multas_graves.html">Graves</a></li>
+                        <li> <a href="multas_muy_graves.html">Muy graves</a></li>
+                    </ul>
+                </li>
+                <li><i class="fa-solid fa-people-group"></i> <a class="menu" href="foro.html">Foro</a></li>
+                <li><i class="fa-solid fa-comments"></i> <a class="menu" href="chat.html">Chat</a></li>
+
+                <li><i class="fa-solid fa-right-from-bracket"></i> <a class="menu" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+
+<script>
+  function cerrarSesion() {
+    // Mostrar un mensaje de confirmación al usuario
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+      // Aquí puedes agregar la lógica para cerrar la sesión y redirigir al usuario a la página de inicio de sesión
+      // Por ejemplo, puedes redirigir al usuario a login.html utilizando window.location.href
+      window.location.href = "login.html";
+    }
+  }
+</script>
+            </ul>
+
+          </nav>
+          <div class="notes-container">
+            <div class="left-notes">
+                <div class="note">
+                    <p>"El mantenimiento adecuado de tu vehículo es esencial. Revisa regularmente las luces, frenos, neumáticos y asegúrate de que todo esté en buen estado."</p>
+                </div>
+                <div class="note">
+                    <p>"Ser un buen conductor no solo es cumplir las reglas, sino también mostrar empatía y respeto hacia los demás usuarios de la vía. Juntos podemos crear un entorno vial más seguro y amable."</p>
+                </div>
+                <div class="note">
+                    <p>"Cada señal de tránsito tiene un propósito. Presta atención a ellas y acata sus indicaciones para garantizar un flujo seguro en las vías."</p>
+                </div>
+            </div>
+        
+            <div class="pdf-container">
+                <embed src="img/REGLAMENTO.pdf" type="application/pdf" width="600" height="800" />
+            </div>
+        
+            <div class="right-notes">
+                <div class="note">
+                    <p>"Tu seguridad y la de los demás está en tus manos. Respeta las señales de tránsito y evita accidentes innecesarios."</p>
+                </div>
+                <div class="note">
+                    <p>"No te distraigas mientras conduces. Mantén la atención en la carretera y evita el uso del teléfono móvil. Un segundo de distracción puede cambiarlo todo."</p>
+                </div>
+                <div class="note">
+                    <p>"El alcohol y la conducción nunca son una buena combinación. Si vas a beber, deja las llaves y el volante en manos de alguien sobrio."</p>
+                </div>
+            </div>
+        </div>
+        
+        
+      
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="rights">Todos los derechos reservados &copy; 2023</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://www.facebook.com/profile.php?id=100093337700789&mibextid=ZbWKwL" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/driveeduca?igshid=NGExMmI2YTkyZg==" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://web.whatsapp.com/send?phone=+50372649784" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:driveeduca1@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

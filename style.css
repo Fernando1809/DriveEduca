@@ -1,0 +1,386 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: #D9D9D9;
+  color: #000000;
+  
+}
+
+
+.color-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #010E3A; /* Color del margen */
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FF730D;
+  padding-left: 2vw;
+}
+
+
+.cont-ul {
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+}
+.menu {
+  text-decoration: none;
+  color: #000000;
+}
+li a{
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+i {
+  color: #FFFFFF;
+}
+li{
+  list-style: none;
+  cursor: pointer;
+  padding: 1.5vw;
+  transition:  all .3s ease 0s;
+}
+
+li:hover {
+  background-color: #010E3A;
+  color: #fff;
+}
+
+li a:hover {
+  background-color: #010E3A;
+  color: #fff;
+}
+.list {
+  position: relative;
+}
+
+.ul-second {
+  display: none;
+  position: absolute;
+  margin-top: 1.5vw;
+}
+
+.ul-second > li{
+  width: 190px;
+  transform: translateX(-20px);
+  border-bottom:solid 1px #fff ;
+  text-align: center;
+  background-color: #010E3A;
+  color: #fff;
+}
+
+.ul-second > li:hover {
+  background-color: #FF730D;
+}
+
+
+.list:hover > .ul-second {
+  display: block;
+}
+
+.titulo-licencias{
+margin-left: 40%;
+}
+
+@media (max-width:900px) {
+  .logo-danicodex {
+      display: none;
+  }
+}
+/*estilo de tarjetas*/
+.flip-card {
+  display: inline-block; /* Para alinear las tarjetas horizontalmente */
+  margin: 15px; /* Agregar un margen entre las tarjetas */
+  background-color: transparent;
+  perspective: 1000px;
+  width: 320px;
+  height: 600px;
+}
+
+.flip-card2 {
+  display: inline-block; /* Para alinear las tarjetas horizontalmente */
+  margin: 90px; /* Agregar un margen entre las tarjetas */
+  background-color: transparent;
+  perspective: 1000px;
+  width: 560px;
+  height: 510px;
+}
+
+.flip-card2:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Girar la tarjeta en el eje Y al hacer clic o pasar el cursor sobre ella */
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d; /* Establecer el estilo de transformación en 3D */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); /* Girar la tarjeta en el eje Y al hacer clic o pasar el cursor sobre ella */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Ocultar el contenido trasero de la tarjeta al mostrar la parte frontal */
+}
+
+.flip-card-front {
+  background-color: #FFFFFF;
+}
+
+.flip-card-back {
+  background-color: #FFFFFF;
+  transform: rotateY(180deg); /* Colocar la parte trasera de la tarjeta detrás de la parte frontal */
+  color: #000000;
+}
+
+.flip-card-front h2 {
+  border: 1px solid black; /* Agregar un borde de 1px sólido en color blanco */
+  padding: 10px; /* Agregar un espacio interno alrededor del texto */
+  
+}
+.flip-card-front p {
+  border: 1px solid black; /* Agregar un borde de 1px sólido en color negro */
+  padding: 10px; /* Agregar un espacio interno alrededor del texto */
+  text-align: justify; /* Justificar el texto */
+}
+
+.flip-card-back h2 {
+  border: 1px solid black; /* Agregar un borde de 1px sólido en color blanco */
+  padding: 10px; /* Agregar un espacio interno alrededor del texto */
+  
+}
+.flip-card-back p {
+  border: 1px solid black; /* Agregar un borde de 1px sólido en color blanco */
+  padding: 10px; /* Agregar un espacio interno alrededor del texto */
+  text-align: justify; /* Justificar el texto */
+}
+
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ajustar la imagen dentro de la tarjeta sin recortes */
+  object-position: center; /* Ajustar la imagen al tamaño de la tarjeta */
+}
+
+ /* css del pie de pagina */
+ html,
+ body {
+   height: 100%;
+   margin: 0;
+ }
+ 
+ .wrapper {
+   min-height: 100%;
+   margin-bottom: 20px; /* Altura del pie de página */
+ }
+ 
+ .content {
+   padding-bottom: 60px; /* Altura del pie de página */
+ }
+ 
+ .footer {
+   background-color: #010E3A;
+   color: white;
+   padding: 20px;
+   height: 60px; /* Altura del pie de página */
+ }
+ 
+ .footer-content {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ 
+ .footer-left {
+   flex: 5;
+ }
+ 
+ .rights {
+   margin: 0;
+ }
+ 
+ .footer-right {
+   flex: 1;
+   text-align: right;
+ }
+ 
+ .social-link {
+   color: white;
+   margin-left: 10px;
+   font-size: 30px;
+ }
+ 
+ .social-link:hover {
+   color: white;
+ }
+  /*pdf*/
+  .notes-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 80px;
+}
+
+.pdf-container {
+    width: 60%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.left-notes,
+.right-notes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note {
+    width: 200px;
+    height: 200px;
+    background-color: #04bbd0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+.note:hover {
+  background-color: #f65fc9;
+}
+
+.note p {
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Estilos para los cuadros de texto */
+.triangular-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.box-left {
+  width: calc(50% - 10px);
+  background-color: #ffff008d;
+  color: #000000;
+  padding: 20px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.box-right {
+  width: calc(50% - 10px);
+  background-color:  #ff000088;
+  color: #000000;
+  padding: 20px;
+  text-align: justify;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.box-right2 {
+width: calc(50% - 10px);
+background-color:  #00ff007e;
+color: #000000;
+padding: 20px;
+text-align: justify;
+margin-bottom: 20px;
+margin-left: auto;
+margin-right: auto;
+}
+.box-title {
+  margin-top: 0;
+}
+
+
+/*carrusel*/
+.carousel {
+width: 100%;
+max-width: 800px; /* Ajusta el ancho máximo del carrusel según tus necesidades */
+margin: 0 auto; /* Centra el carrusel horizontalmente */
+overflow: hidden; /* Oculta las imágenes adicionales */
+}
+
+.carousel-container {
+display: flex;
+transition: transform 0.3s ease;
+}
+
+.carousel-slide {
+flex: 0 0 100%; /* Muestra cada imagen en el ancho completo del carrusel */
+}
+
+.carousel-image {
+width: 100%;
+height: auto;
+}
+
+.carousel-slide img {
+width: 800px; /* Establece el ancho deseado */
+height: 500px; /* Establece la altura deseada */
+object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+display: block; /* Cambia el elemento a un bloque para aplicar el centrado */
+margin: 0 auto; /* Centra horizontalmente */
+position: relative; /* Establece la posición relativa para el centrado vertical */
+top: 50%; /* Mueve la imagen hacia abajo un 50% de su altura */
+transform: translateY(-50%); /* Vuelve a mover la imagen hacia arriba un 50% de su altura */
+}
+
+/*tabla de multas*/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #000;
+}
+
+.table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+header, section, footer {
+  padding: 20px;
+}
