@@ -26,18 +26,7 @@
                     <li> <a href="licencia_pesada.html">Licencia pesada</a></li>
                     <li> <a href="licencia_T.html">Licencia pesada T</a></li>
 
-                    <li><i class="fa-solid fa-right-from-bracket"></i> <a class="menu" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
-
-<script>
-  function cerrarSesion() {
-    // Mostrar un mensaje de confirmación al usuario
-    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
-      // Aquí puedes agregar la lógica para cerrar la sesión y redirigir al usuario a la página de inicio de sesión
-      // Por ejemplo, puedes redirigir al usuario a login.html utilizando window.location.href
-      window.location.href = "login.html";
-    }
-  }
-</script>
+                    
                 </ul>
             </li>
             <li class="list"><i class="fa-solid fa-book"></i>
@@ -52,6 +41,18 @@
             </li>
             <li><i class="fa-solid fa-people-group"></i> <a class="menu" href="foro.html">Foro</a></li>
             <li><i class="fa-solid fa-comments"></i> <a class="menu" href="chat.html">Chat</a></li>
+            <li><i class="fa-solid fa-right-from-bracket"></i> <a class="menu" href="#" onclick="cerrarSesion()">Cerrar Sesión</a></li>
+
+<script>
+  function cerrarSesion() {
+    // Mostrar un mensaje de confirmación al usuario
+    if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+      // Aquí puedes agregar la lógica para cerrar la sesión y redirigir al usuario a la página de inicio de sesión
+      // Por ejemplo, puedes redirigir al usuario a login.html utilizando window.location.href
+      window.location.href = "login.html";
+    }
+  }
+</script>
         </ul>
     </nav>
     <header>
